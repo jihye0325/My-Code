@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04-effect</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        .car {
+            width: 70px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <img class="car" src="../resources/images/car.jpg"><br><hr>
+    <img class="car" src="../resources/images/car.jpg"><br><hr>
+    <img class="car" src="../resources/images/car.jpg"><br><hr>
+    <img class="car" src="../resources/images/car.jpg"><br><hr>
+    <img class="car" src="../resources/images/car.jpg"><br><hr>
+    <img class="car" src="../resources/images/car.jpg"><br><hr>
+    <!--아래 밑줄 조절-->
+    <br>
+
+    자동차를 클릭해서 출발시키세요<br><br>
+    <button class="reset">제자리로</button>
+
+    <script>
+        $(document).ready(function(){
+            // 자동차 클릭 
+            $(".car").each(function(index){
+                $(this).click(function(){
+                    $(this).animate({left : "500px"}, Math.random() * 1000 + 500);
+                });
+            });
+
+            // 제자리로 버튼 클릭
+            $(".reset").click(function(){
+                $(".car").animate({left : "0px"});
+            });
+            
+        });
+    </script>
+</body>
+</html>
